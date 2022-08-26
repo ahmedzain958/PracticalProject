@@ -35,7 +35,8 @@ jobs:
       - checkout
       - run:
           name: "Say env"
-          command: "echo $MY_ENV_VAR" #helo
+          command: |
+            echo $MY_ENV_VAR
 workflows:
   version: 2
   print_hello-workflow:
