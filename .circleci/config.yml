@@ -29,6 +29,7 @@ jobs:
           name: "Say world"
           command: "echo World!"
 workflows:
+  version: 2
   print_hello-workflow:
     jobs:
       - print_hello
