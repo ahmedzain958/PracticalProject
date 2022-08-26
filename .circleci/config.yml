@@ -30,19 +30,15 @@ jobs:
           command: "echo World!"
   print_env:
     docker:
-      - image: circleci/node:13.8.0
+      - image: cimg/base:2020.01
     steps:
       - checkout
       - run:
-          name: "Say env"
+          name: "echo an env var that is part of our project"
           command: |
-            echo $SSSSSSSSSS
+            echo $MY_ENV_VAR
 workflows:
   version: 2
   print_hello-workflow:
     jobs:
-      - print_hello
-      - print_world:
-          requires: 
-            - print_hello
       - print_env
